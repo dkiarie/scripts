@@ -1,0 +1,8 @@
+#!/bin/bash
+
+dropdb oxygen_development
+dropdb oxygen_test
+
+PGDATABASE=oxygen_development debian/scripts/load_env_database
+PGDATABASE=oxygen_test debian/scripts/load_env_database
+
