@@ -3,6 +3,7 @@
 REPO_PATH=$1
 
 cd $REPO_PATH
+git fetch;
 
 if git merge-base --is-ancestor origin/master master; then
     echo "It's not time to rebase!"
