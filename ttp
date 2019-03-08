@@ -1,0 +1,18 @@
+#!/bin/bash
+
+tmux has-session -t play
+if [ $? != 0 ]
+then
+  tmux new-session -s play -n servers -d
+  tmux send-keys -t play 'cd ~/code/playground' C-m
+  tmux new-window -n editor -t play
+  tmux send-keys -t play:2 'cd ~/code/playground' C-m
+  tmux new-window -n tests -t play
+  tmux send-keys -t play:3 'cd ~/code/playground' C-m
+  tmux new-window -n notes -t play
+  tmux send-keys -t play:4 'cd ~/notes' C-m
+  tmux send-keys -t play:4 'e .' C-m
+  tmux select-window -t play:1
+  tmux send-keys -t play:1 'weather' C-m
+fi
+tmux attach -t play

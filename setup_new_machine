@@ -1,0 +1,12 @@
+#!/bin/bash
+
+cd ~/
+mkdir ~/archive
+mkdir ~/archive/ccc ~/archive/youtube
+mkdir ~/books
+mkdir ~/builds
+mkdir ~/code
+mkdir ~/code/david.kiar.ie ~/code/playground ~/code/work
+mkdir ~/documents
+mkdir ~/documents/finances ~/documents/travel ~/documents/work
+git clone git@github.com:dkiarie/notes
