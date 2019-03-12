@@ -14,5 +14,6 @@ then
   tmux send-keys -t work:4 'e .' C-m
   tmux select-window -t work:1
   tmux send-keys -t work:1 'weather' C-m
+  tmux send-keys -t work:1 't ls' C-m
 fi
 tmux attach -t work
