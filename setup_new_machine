@@ -6,7 +6,12 @@ mkdir ~/archive/ccc ~/archive/youtube
 mkdir ~/books
 mkdir ~/builds
 mkdir ~/code
-mkdir ~/code/david.kiar.ie ~/code/playground ~/code/work
+mkdir ~/code/david.kiar.ie ~/code/playground ~/code/projects ~/code/work
 mkdir ~/documents
 mkdir ~/documents/finances ~/documents/travel ~/documents/work
-git clone git@github.com:dkiarie/notes
+
+git clone git@github.com:dkiarie/dotfiles ~/dotfiles
+git clone git@github.com:dkiarie/notes ~/notes
+git clone git@github.com:dkiarie/scripts ~/scripts
+
+~/scripts/link_dots
