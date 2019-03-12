@@ -12,6 +12,9 @@ then
   tmux new-window -n notes -t work
   tmux send-keys -t work:4 'cd ~/notes' C-m
   tmux send-keys -t work:4 'e .' C-m
+  tmux new-window -n todo -t work
+  tmux send-keys -t work:5 'cd ~/' C-m
+  tmux send-keys -t work:5 't ls' C-m
   tmux select-window -t work:1
   tmux send-keys -t work:1 'weather' C-m
   tmux send-keys -t work:1 't ls' C-m

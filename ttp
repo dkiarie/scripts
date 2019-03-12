@@ -12,6 +12,9 @@ then
   tmux new-window -n notes -t play
   tmux send-keys -t play:4 'cd ~/notes' C-m
   tmux send-keys -t play:4 'e .' C-m
+  tmux new-window -n todo -t play
+  tmux send-keys -t play:5 'cd ~/' C-m
+  tmux send-keys -t play:5 't ls' C-m
   tmux select-window -t play:1
   tmux send-keys -t play:1 'weather' C-m
   tmux send-keys -t play:1 't ls' C-m
