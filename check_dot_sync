@@ -1,8 +1,0 @@
-#!/bin/bash
-
-diff dotfiles/.gitconfig ~/.gitconfig
-diff dotfiles/.gitignore ~/.gitignore
-diff dotfiles/.profile   ~/.profile
-diff dotfiles/.tmux.conf ~/.tmux.conf
-diff dotfiles/.vimrc     ~/.vimrc
-diff dotfiles/.zshrc     ~/.zshrc
