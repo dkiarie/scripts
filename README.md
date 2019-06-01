@@ -7,7 +7,6 @@ I should really make a habit of keeping these...
 - setup_new_machine (WIP)
 - top_commands
 - weather
-- reset_oxygen_db
 
 ### ttr (time to rebase)
 #### Description
