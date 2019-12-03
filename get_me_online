@@ -1,0 +1,9 @@
+#/bin/bash
+
+WLAN_INTERFACE=$1  # wlp2s0 on laptop
+
+ip link set $WLAN_INTERFACE up
+ip link show $WLAN_INTERFACE
+wpa_supplicant -B -D wext -i $WLAN_INTERFACE -c /etc/wpa_supplicant.conf
+/sbin/iw $WLAN_INTERFACE link
+dhclient $WLAN_INTERFACE
