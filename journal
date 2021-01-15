@@ -1,0 +1,1 @@
+touch ~/notes/journal/$( date '+%Y-%m-%d_%H-%M-%S' ).md

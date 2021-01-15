@@ -1,20 +1,33 @@
 #!/bin/bash
 
+DIRECTORY=$1
+
 tmux has-session -t work
 if [ $? != 0 ]
 then
   tmux new-session -s work -n servers -d
-  tmux send-keys -t work 'cd ~/code/work' C-m
+  tmux send-keys -t work 'cd ~/code' C-m
+
   tmux new-window -n editor -t work
-  tmux send-keys -t work:2 'cd ~/code/work' C-m
+  tmux send-keys -t work:2 'cd ~/code' C-m
+
   tmux new-window -n tests -t work
-  tmux send-keys -t work:3 'cd ~/code/work' C-m
-  tmux new-window -n notes -t work
-  tmux send-keys -t work:4 'cd ~/notes' C-m
-  tmux send-keys -t work:4 'e .' C-m
-  tmux new-window -n todo -t work
+  tmux send-keys -t work:3 'cd ~/code' C-m
+
+  tmux new-window -n db -t work
+  tmux send-keys -t work:4 'cd ~/code' C-m
+
+  tmux new-window -n logs -t work
   tmux send-keys -t work:5 'cd ~/' C-m
-  tmux send-keys -t work:5 't ls' C-m
+
+  tmux new-window -n notes -t work
+  tmux send-keys -t work:6 'cd ~/notes' C-m
+  tmux send-keys -t work:6 'e .' C-m
+
+  tmux new-window -n todo -t work
+  tmux send-keys -t work:7 'cd ~/' C-m
+  tmux send-keys -t work:7 't ls' C-m
+
   tmux select-window -t work:1
   tmux send-keys -t work:1 'weather' C-m
   tmux send-keys -t work:1 't ls' C-m

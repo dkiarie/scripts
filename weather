@@ -1,2 +1,2 @@
 #!/bin/bash
-curl wttr.in/Chicago\?m
+curl wttr.in/\?m
