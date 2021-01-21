@@ -21,7 +21,7 @@ then
   tmux send-keys -t work:5 'cd ~/' C-m
 
   tmux new-window -n notes -t work
-  tmux send-keys -t work:6 'cd ~/notes' C-m
+  tmux send-keys -t work:6 'cd ~/notes/content' C-m
   tmux send-keys -t work:6 'e .' C-m
 
   tmux new-window -n todo -t work
