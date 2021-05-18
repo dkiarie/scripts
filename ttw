@@ -1,24 +1,30 @@
 #!/bin/bash
 
-DIRECTORY=$1
+
+if [ -n $1 ] && [ -d "/home/$USER/code/$1" ]
+then
+  DIRECTORY="/home/$USER/code/$1"
+else
+  DIRECTORY="/home/$USER/code"
+fi
 
 tmux has-session -t work
 if [ $? != 0 ]
 then
   tmux new-session -s work -n servers -d
-  tmux send-keys -t work 'cd ~/code' C-m
+  tmux send-keys -t work "cd $DIRECTORY" C-m
 
   tmux new-window -n editor -t work
-  tmux send-keys -t work:2 'cd ~/code' C-m
+  tmux send-keys -t work:2 "cd $DIRECTORY" C-m
 
   tmux new-window -n tests -t work
-  tmux send-keys -t work:3 'cd ~/code' C-m
+  tmux send-keys -t work:3 "cd $DIRECTORY" C-m
 
   tmux new-window -n db -t work
-  tmux send-keys -t work:4 'cd ~/code' C-m
+  tmux send-keys -t work:4 "cd $DIRECTORY" C-m
 
   tmux new-window -n logs -t work
-  tmux send-keys -t work:5 'cd ~/' C-m
+  tmux send-keys -t work:5 "cd $DIRECTORY" C-m
 
   tmux new-window -n notes -t work
   tmux send-keys -t work:6 'cd ~/notes/content' C-m
